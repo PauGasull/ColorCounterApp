@@ -1,13 +1,135 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --colorBackground: #f5f5f5;
+  --colorShadow: #242424;
+  --colorDarkButton: #c0c0c0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: var(--colorBackground);
+  position: relative;
+  height: 100vh;
+  display: flex;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 15%;
+  padding-bottom: 2%;
+}
+
+.actionButtons button {
+  width: 6vw;
+  height: 6vw;
+  margin-top: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.actionButtons button:hover {
+  transform: translateY(-7px);
+  border-radius: 20px;
+  box-shadow: var(--colorShadow) 0px 2px 5px;
+  transition: transform 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  background-color: white;
+}
+
+.actionButtons i {
+  font-size: 4vw;
+}
+
+.verticalSeparator {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 2px;
+  height: 100vh;
+  background-color: black;
+}
+
+.counterContainer {
+  width: 85%;
+  margin-left: 10%;
+}
+
+.counterGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valueButton,
+.colorButton {
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: transform 0.2s, border-radius 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.add, .substract {
+  background-color: var(--colorDarkButton);
+}
+
+.valueButton {
+  width: 4vw;
+  height: 4vw;
+}
+
+.valueButton i {
+  font-size: 2vw;
+}
+
+.colorButton {
+  width: 8vw;
+  height: 4vw;
+  font-size: 100%;
+}
+
+.counterText {
+  margin-top: 1vw;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.valueButton:hover,
+.colorButton:hover {
+  transform: translateY(-7px);
+  border-radius: 20px;
+  box-shadow: var(--colorShadow) 0px 2px 5px;
+  background-color: white;
 }
